@@ -2759,8 +2759,8 @@ export class Editor extends EventEmitter<TLEventMap> {
 	 * @public
 	 */
 	zoomToFit(opts?: TLCameraMoveOptions): this {
-		const { isZoomLocked} = this.getCameraOptions()
-		if ((isZoomLocked) && !opts?.force) return this
+		const { isZoomLocked } = this.getCameraOptions()
+		if (isZoomLocked && !opts?.force) return this
 		const ids = [...this.getCurrentPageShapeIds()]
 		if (ids.length <= 0) return this
 		const pageBounds = Box.Common(compact(ids.map((id) => this.getShapePageBounds(id))))
@@ -2927,7 +2927,7 @@ export class Editor extends EventEmitter<TLEventMap> {
 	}
 
 	/**
-	 * Lock/unlock the camera's zoom functionality. 
+	 * Lock/unlock the camera's zoom functionality.
 	 *
 	 * @example
 	 * ```ts
@@ -2937,10 +2937,10 @@ export class Editor extends EventEmitter<TLEventMap> {
 	 *
 	 * @public
 	 */
-	toggleZoom()  : this {
+	toggleZoom(): this {
 		const { isZoomLocked } = this.getCameraOptions()
-		if (isZoomLocked) this.setCameraOptions({isZoomLocked: false})
-		else this.setCameraOptions({isZoomLocked: true})
+		if (isZoomLocked) this.setCameraOptions({ isZoomLocked: false })
+		else this.setCameraOptions({ isZoomLocked: true })
 		return this
 	}
 

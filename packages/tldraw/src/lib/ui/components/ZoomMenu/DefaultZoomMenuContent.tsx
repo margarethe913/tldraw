@@ -5,7 +5,7 @@ import { TldrawUiMenuActionItem } from '../primitives/menus/TldrawUiMenuActionIt
 /** @public @react */
 export function DefaultZoomMenuContent() {
 	const editor = useEditor()
-	const {isZoomLocked} = editor.getCameraOptions()
+	const { isZoomLocked } = editor.getCameraOptions()
 
 	return (
 		<>
